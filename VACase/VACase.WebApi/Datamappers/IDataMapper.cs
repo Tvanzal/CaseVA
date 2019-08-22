@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using VACase.Server.Models;
 
-namespace VACase.Server.Datamappers
+namespace VACase.WebApi.Datamappers
 {
     interface IDataMapper<TEntity, in TKey>
     {
-        //IEnumerable<TEntity> GetAll();
+        IEnumerable<TEntity> GetAll();
         //TEntity GetById(TKey id);
         //IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
         TEntity Insert(TEntity entity);

@@ -9,6 +9,8 @@ namespace VACase.Server.DAL
 {
     class VACaseContext : DbContext
     {
-
+        public VACaseContext(string nameOrConnectionString) : base(nameOrConnectionString)
+        {
+        }
     }
 }

@@ -8,11 +8,11 @@ namespace VACase.Server.Models
 {
     public class Board
     {
-        public List<Square> Squares { get; set; }
+        //public List<Square> Squares { get; set; }
 
-        public Board()
-        {
+        //public Board()
+        //{
 
-        }
+        //}
     }
 }
