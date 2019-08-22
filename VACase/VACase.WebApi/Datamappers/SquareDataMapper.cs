@@ -14,7 +14,7 @@ namespace VACase.WebApi.Datamappers
         {
             using(var context = new VACaseWebApiContext())
             {
-                return context.Squares;
+                return context.Squares.ToList();
             }
         }
 

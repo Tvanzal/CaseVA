@@ -23,9 +23,9 @@ namespace VACase.WebApi.Controllers
             SquareDataMapper = new SquareDataMapper();
         }
         // GET: api/Squares
-        public IQueryable<Square> GetSquares()
+        public IEnumerable<Square> GetSquares()
         {
-            SquareDataMapper.GetAll();
+            return SquareDataMapper.GetAll();
         }
 
         // GET: api/Squares/5
@@ -90,34 +90,34 @@ namespace VACase.WebApi.Controllers
             return CreatedAtRoute("DefaultApi", new { id = square.Id }, square);
         }
 
-        // DELETE: api/Squares/5
-        [ResponseType(typeof(Square))]
-        public IHttpActionResult DeleteSquare(long id)
-        {
-            Square square = db.Squares.Find(id);
-            if (square == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/Squares/5
+        //[ResponseType(typeof(Square))]
+        //public IHttpActionResult DeleteSquare(long id)
+        //{
+        //    Square square = db.Squares.Find(id);
+        //    if (square == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            db.Squares.Remove(square);
-            db.SaveChanges();
+        //    db.Squares.Remove(square);
+        //    db.SaveChanges();
 
-            return Ok(square);
-        }
+        //    return Ok(square);
+        //}
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
 
-        private bool SquareExists(long id)
-        {
-            return db.Squares.Count(e => e.Id == id) > 0;
-        }
+        //private bool SquareExists(long id)
+        //{
+        //    return db.Squares.Count(e => e.Id == id) > 0;
+        //}
     }
 }

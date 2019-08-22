@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Web;
 
 namespace VACase.WebApi.Models
 {
+    [DbConfigurationType(typeof(MySqlConfiguration))]
     public class VACaseWebApiContext : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
@@ -15,7 +17,11 @@ namespace VACase.WebApi.Models
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public VACaseWebApiContext() : base("name=VACaseWebApiContext")
+        public VACaseWebApiContext() : base("name=DefaultConnection")
+        {
+        }
+
+        public VACaseWebApiContext(string connectionstring) : base(connectionstring)
         {
         }
 
